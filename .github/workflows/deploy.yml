@@ -5,14 +5,14 @@ on:
       - main
       - dev
 env:
-  MONGODB_DB_NAME: test
-  MONGODB_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
-  MONGODB_USERNAME: ${{ secrets.MONGO_USERNAME }}
-  MONGODB_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
   PORT: 8080
 jobs:
   test:
-    environment: testing
+    env:
+      MONGODB_DB_NAME: test
+      MONGODB_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
+      MONGODB_USERNAME: ${{ secrets.MONGO_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Code

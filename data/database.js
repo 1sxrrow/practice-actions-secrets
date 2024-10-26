@@ -11,7 +11,7 @@ const client = new MongoClient(uri);
 console.log('Trying to connect to db');
 
 try {
-  console.log(dbUser, dbPassword, dbName, clusterAddress);
+  console.log(`dbUser: ${dbUser}, dbPassword: ${dbPassword}, dbName: ${dbName}, clusterAddress: ${clusterAddress}`);
   await client.connect();
   await client.db(dbName).command({ ping: 1 });
   console.log('Connected successfully to server');
