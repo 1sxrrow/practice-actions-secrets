@@ -8,6 +8,7 @@ env:
   PORT: 8080
 jobs:
   test:
+    environment: testing
     env:
       MONGODB_DB_NAME: test
       MONGODB_CLUSTER_ADDRESS: cluster0.z2iobfe.mongodb.net
