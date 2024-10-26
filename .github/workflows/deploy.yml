@@ -4,15 +4,14 @@ on:
     branches:
       - main
       - dev
-env: 
+env:
   MONGO_DB_NAME: test
+  MONGO_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
+  MONGODB_USERNAME: ${{secrets.MONGO_USERNAME}}
+  MONGODB_PASSWORD: ${{secrets.MONGO_PASSWORD}}
   PORT: 8080
 jobs:
   test:
-    env:
-      MONGO_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
-      MONGO_USERNAME: ${{secrets.MONGO_USERNAME}}
-      MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}} 
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -37,5 +36,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: |        
+        run: |
           echo "..."
