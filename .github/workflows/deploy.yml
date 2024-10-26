@@ -12,7 +12,7 @@ jobs:
     env:
       MONGO_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
       MONGO_USERNAME: ${{secrets.MONGO_USERNAME}}
-      MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}
+      MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}} 
     environment: testing
     runs-on: ubuntu-latest
     steps:
