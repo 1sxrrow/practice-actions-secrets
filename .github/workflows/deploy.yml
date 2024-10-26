@@ -5,10 +5,10 @@ on:
       - main
       - dev
 env:
-  MONGO_DB_NAME: test
-  MONGO_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
-  MONGODB_USERNAME: ${{secrets.MONGO_USERNAME}}
-  MONGODB_PASSWORD: ${{secrets.MONGO_PASSWORD}}
+  MONGODB_DB_NAME: test
+  MONGODB_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
+  MONGODB_USERNAME: ${{ secrets.MONGO_USERNAME }}
+  MONGODB_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
   PORT: 8080
 jobs:
   test:
@@ -30,7 +30,7 @@ jobs:
         run: npm test
       - name: Output information
         run: |
-          echo "MONGO_USERNAME: ${{env.MONGO_USERNAME}}"
+          echo "MONGO_USERNAME: ${{env.MONGODB_USERNAME}}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
