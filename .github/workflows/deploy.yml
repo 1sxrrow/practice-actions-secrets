@@ -10,7 +10,7 @@ jobs:
   test:
     env:
       MONGODB_DB_NAME: test
-      MONGODB_CLUSTER_ADRESS: cluster0.z2iobfe.mongodb.net
+      MONGODB_CLUSTER_ADDRESS: cluster0.z2iobfe.mongodb.net
       MONGODB_USERNAME: ${{ secrets.MONGO_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
     runs-on: ubuntu-latest
